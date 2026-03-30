@@ -1,0 +1,61 @@
+[
+  {
+    "id": "Q001",
+    "query": "What is the patient privacy policy for sharing medical records?",
+    "expected_intent": "records",
+    "expected_contains": ["HIPAA", "authorization", "consent"],
+    "department": "administration",
+    "doc_type": "policy"
+  },
+  {
+    "id": "Q002",
+    "query": "I have severe chest pain radiating to my left arm, what should I do?",
+    "expected_intent": "triage",
+    "expected_contains": ["emergency", "immediately", "911"],
+    "urgency_min": 1,
+    "urgency_max": 2
+  },
+  {
+    "id": "Q003",
+    "query": "How do I schedule an appointment with a cardiologist?",
+    "expected_intent": "appointment",
+    "expected_contains": ["schedule", "appointment", "cardiology"],
+    "department": "cardiology"
+  },
+  {
+    "id": "Q004",
+    "query": "What does my insurance cover for the upcoming procedure?",
+    "expected_intent": "billing",
+    "expected_contains": ["insurance", "coverage", "authorization"],
+    "department": "billing"
+  },
+  {
+    "id": "Q005",
+    "query": "Can warfarin and aspirin be taken together?",
+    "expected_intent": "general",
+    "expected_contains": ["interaction", "bleeding", "risk", "pharmacist"],
+    "drug_interaction": {"drug_a": "warfarin", "drug_b": "aspirin", "severity": "major"}
+  },
+  {
+    "id": "Q006",
+    "query": "What fasting requirements are there before a blood glucose test?",
+    "expected_intent": "general",
+    "expected_contains": ["fast", "hours"],
+    "department": "laboratory"
+  },
+  {
+    "id": "Q007",
+    "query": "I need a refill for my metformin prescription",
+    "expected_intent": "general",
+    "expected_contains": ["prescription", "physician", "refill"],
+    "drug_mentioned": "metformin"
+  },
+  {
+    "id": "Q008",
+    "query": "My child has a fever of 103°F and is not eating",
+    "expected_intent": "triage",
+    "expected_contains": ["fever", "pediatric", "immediately"],
+    "urgency_min": 1,
+    "urgency_max": 3
+  }
+]

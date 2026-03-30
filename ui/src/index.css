@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Color theme CSS variables ──────────────────────────────────────────── */
+/*  Each data-color attribute sets the brand palette.                        */
+/*  RGB triplets (no rgb() wrapper) so Tailwind opacity modifiers work.      */
+
+:root,
+[data-color="indigo"] {
+  --brand-50:  238 242 255;
+  --brand-100: 224 231 255;
+  --brand-200: 199 210 254;
+  --brand-300: 165 180 252;
+  --brand-400: 129 140 248;
+  --brand-500: 99  102 241;
+  --brand-600: 79  70  229;
+  --brand-700: 67  56  202;
+  --brand-800: 55  48  163;
+  --brand-900: 49  46  129;
+}
+
+[data-color="violet"] {
+  --brand-50:  245 243 255;
+  --brand-100: 237 233 254;
+  --brand-200: 221 214 254;
+  --brand-300: 196 181 253;
+  --brand-400: 167 139 250;
+  --brand-500: 139 92  246;
+  --brand-600: 124 58  237;
+  --brand-700: 109 40  217;
+  --brand-800: 91  33  182;
+  --brand-900: 76  29  149;
+}
+
+[data-color="teal"] {
+  --brand-50:  240 253 250;
+  --brand-100: 204 251 241;
+  --brand-200: 153 246 228;
+  --brand-300: 94  234 212;
+  --brand-400: 45  212 191;
+  --brand-500: 20  184 166;
+  --brand-600: 13  148 136;
+  --brand-700: 15  118 110;
+  --brand-800: 17  94  89;
+  --brand-900: 19  78  74;
+}
+
+[data-color="rose"] {
+  --brand-50:  255 241 242;
+  --brand-100: 255 228 230;
+  --brand-200: 254 205 211;
+  --brand-300: 253 164 175;
+  --brand-400: 251 113 133;
+  --brand-500: 244 63  94;
+  --brand-600: 225 29  72;
+  --brand-700: 190 18  60;
+  --brand-800: 159 18  57;
+  --brand-900: 136 19  55;
+}
+
+[data-color="amber"] {
+  --brand-50:  255 251 235;
+  --brand-100: 254 243 199;
+  --brand-200: 253 230 138;
+  --brand-300: 252 211 77;
+  --brand-400: 251 191 36;
+  --brand-500: 245 158 11;
+  --brand-600: 217 119 6;
+  --brand-700: 180 83  9;
+  --brand-800: 146 64  14;
+  --brand-900: 120 53  15;
+}
+
+[data-color="sky"] {
+  --brand-50:  240 249 255;
+  --brand-100: 224 242 254;
+  --brand-200: 186 230 253;
+  --brand-300: 125 211 252;
+  --brand-400: 56  189 248;
+  --brand-500: 14  165 233;
+  --brand-600: 2   132 199;
+  --brand-700: 3   105 161;
+  --brand-800: 7   89  133;
+  --brand-900: 12  74  110;
+}
+
+/* ── Root variables ─────────────────────────────────────────────────────── */
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ── Base resets ────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-1 text-slate-100 min-h-screen;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Remove default margins */
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+/* ── Custom scrollbar ───────────────────────────────────────────────────── */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.slate.700') transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.slate.700');
+    border-radius: 999px;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ── Code highlighting tokens ───────────────────────────────────────────── */
+@layer utilities {
+  .code-highlighted .ct-keyword  { color: #c792ea; }
+  .code-highlighted .ct-string   { color: #c3e88d; }
+  .code-highlighted .ct-comment  { color: #546e7a; font-style: italic; }
+  .code-highlighted .ct-number   { color: #f78c6c; }
+  .code-highlighted .ct-decorator { color: #82aaff; }
+  .code-highlighted .ct-func     { color: #82aaff; }
+}
+
+/* ── Animation classes ──────────────────────────────────────────────────── */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.25s ease-out;
+  }
+
+  .animate-pulse2 {
+    animation: pulse2 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse2 {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ── Focus ring ─────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid theme('colors.brand.DEFAULT');
+  outline-offset: 2px;
+}
+
+/* ── Selection ────────────────────────────────────────────────────── */
+::selection {
+  background-color: rgb(var(--brand-500) / 0.5);
+  color: white;
+}
+
+/* ── Prevent layout shift from scrollbar ─────────────────────────────────── */
+html {
+  overflow-y: scroll;
+}
