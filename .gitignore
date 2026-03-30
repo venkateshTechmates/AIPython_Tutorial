@@ -1,0 +1,154 @@
+# ─────────────────────────────────────────────────────────────
+#  AIPython_Tutorial — Hospital AI Platform
+#  .gitignore  (Python + Node/React + Docker + editors)
+# ─────────────────────────────────────────────────────────────
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+.envs/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+.eggs/
+*.whl
+*.dist-info/
+
+# Package managers
+.uv/
+.pip/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+nosetests.xml
+*.cover
+*.log
+.tox/
+.nox/
+.cache/
+
+# MyPy / type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pyre/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Compiled extensions
+*.so
+*.dylib
+
+# ── Environment / secrets ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# ── Database / persistence ────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+hospital.db
+sessions/
+qdrant_storage/
+
+# ── Node / React (ui/) ────────────────────────────────────────
+ui/node_modules/
+node_modules/
+ui/dist/
+ui/.vite/
+ui/.parcel-cache/
+ui/coverage/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# Package manager locks (keep one; remove the other if you don't use it)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ── Docker ────────────────────────────────────────────────────
+*.env.docker
+docker-compose.override.yml
+
+# ── IDEs / editors ────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.history/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── macOS ─────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ── Windows ───────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Linux ─────────────────────────────────────────────────────
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ── LangSmith / observability ─────────────────────────────────
+langsmith_traces/
+traces/
+
+# ── Misc ──────────────────────────────────────────────────────
+*.bak
+*.tmp
+*.temp
+.turbo/
+.next/
+.nuxt/
+.output/
